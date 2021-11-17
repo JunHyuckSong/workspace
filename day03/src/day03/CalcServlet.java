@@ -1,4 +1,4 @@
-package day02;
+package day03;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -58,8 +58,9 @@ public class CalcServlet extends HttpServlet {
 	    out.println("</HTML>");
 
 	}
+
 	
-	
+
 	
 
 }
