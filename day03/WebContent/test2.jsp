@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<!-- 태그바디 -->
+	<!-- 태그바디 -->
+	확인
 	<jsp:include page="news.jsp">
 		<jsp:param value="apple" name="a"/>
 		<jsp:param value="banana" name="b"/>
