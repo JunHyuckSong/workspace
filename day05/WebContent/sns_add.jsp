@@ -24,7 +24,7 @@
    String msg=request.getParameter("msg");
    
    ArrayList<String> datas=(ArrayList)application.getAttribute("datas");
-   if(datas==null){
+   if(datas==null){//댓글이 처음 달렸을 때 1회 생성됨.
       datas=new ArrayList<String>();
       application.setAttribute("datas", datas);
    }
