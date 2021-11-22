@@ -90,7 +90,7 @@ public class Calc extends HttpServlet {
 			response.addCookie(valueCookie);
 			response.addCookie(opCookie);
 			
-			
+			response.sendRedirect("calc.html");
 		}
 		
 		
