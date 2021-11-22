@@ -1,6 +1,8 @@
 INDEX VERSION 1.131
 C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3453716123.index
 \day01\src
+C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2097607600.index
+\webclass3_HW1\src
 C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3470638564.index
 \day05\src
 C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1433989515.index
