@@ -23,7 +23,7 @@
 	</form>
 	<hr>
 	<%
-		ArrayList<String> datas = (ArrayList)application.getAttribute("datas");
+		ArrayList<String> datas = (ArrayList)application.getAttribute("datas");//댓글의 경우 세션이 만료되어도 계속 유지되어야 하고 공통의 데이터이므로 application을 사용!!
 		if(datas!=null){
 			for(String data : datas){
 				out.println(data + "<br>");
