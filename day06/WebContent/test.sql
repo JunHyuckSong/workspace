@@ -17,3 +17,11 @@ select * from test;
 select * from TEST where b like '%소%';
 
 drop table test;
+
+create table webtoon(
+	day varchar(10),
+	webtoon_name varchar(10)
+);
+
+select * from WEBTOON;
+
