@@ -21,11 +21,11 @@
 			
 			// 이 지점에 insert SQL을 pstmt통해 추가해줘야함
 			if(request.getParameter("writer")!=null){ // request를 통해 데이터가 넘어올때만 실행시키자. 조건을 걸어주지 않으면 매번 실행된다.
-				String uname = request.getParameter("writer");
+				String writer = request.getParameter("writer");
 				String content = request.getParameter("content");
 				
 				pstmt = conn.prepareStatement(sql_insert);
-				pstmt.setString(1, uname);
+				pstmt.setString(1, writer);
 				pstmt.setString(2, content); 
 				pstmt.executeUpdate();				
 			}
