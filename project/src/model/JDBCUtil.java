@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class JDBCUtil {
 
-	public static void connect() {
+	public static Connection connect() {
 		String driver="oracle.jdbc.driver.OracleDriver";
 		String url="jdbc:oracle:thin:@localhost:1521:xe";
 		String user="song";
@@ -17,11 +17,12 @@ public class JDBCUtil {
 		// 이 곳 구현하기
 		try {
 			Class.forName(driver);
-			DriverManager.getConnection(url, user, password);
+			conn = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return conn;
 		
 	}
 	//1. 코드의 재사용성 증가
