@@ -13,6 +13,8 @@ C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2911333
 \test_login\src
 C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1349696522.index
 \day08\src
+C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3641468235.index
+\project\src
 C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3453716123.index
 \day01\src
 C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1433989515.index

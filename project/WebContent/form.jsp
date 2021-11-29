@@ -8,7 +8,7 @@
 </head>
 <body>
 <form action="controller.jsp" method="post">
-	<input type="text" name="action" value="insert">
+	<input type="hidden" name="action" value="insert">
 	<table border="1">
 		<tr>
 			<td>글 제목</td>

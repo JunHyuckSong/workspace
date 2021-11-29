@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>메인 페이지</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<table border="1">
@@ -16,13 +17,21 @@
 			<th>글 번호</th><th>글 제목</th><th>작성자</th>
 		</tr>
 		<%
-			for(BoardVO v : (ArrayList<BoardVO>)datas){ // datas는 ArrayList, 즉 object타입을 반환하므로 형변환이 필요하다((ArrayList<BoardVO>))
+			if(datas.size()!=0){		
+				for(BoardVO v : (ArrayList<BoardVO>)datas){ // datas는 ArrayList, 즉 object타입을 반환하므로 형변환이 필요하다((ArrayList<BoardVO>))
 		%>
 		<tr>
 			<td><a href="controller.jsp?action=board&bid=<%=v.getBid()%>"><%=v.getBid() %></a></td><td><%=v.getTitle() %></td><td><%=v.getWriter() %></td>
 		</tr>
 		<% 
 		
+				}
+			}else{
+			%>
+			<tr>
+				<td colspan="3"><img alt="퐁키" src="images/image3.jpg"></td>
+			<tr>
+			<%	
 			}
 		%>		
 	

@@ -2,7 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" errorPage="error.jsp"%>
+    pageEncoding="UTF-8" errorPage="error/error.jsp"%>
 <jsp:useBean id="dao" class="model.BoardDAO"/>
 <jsp:useBean id="vo" class="model.BoardVO"/>
 <jsp:setProperty property="*" name="vo"/>
@@ -35,7 +35,7 @@
 		//2.V한테 데이터를 전달
 		pageContext.forward("board.jsp");
 	}else if(action.equals("update")){
-		if(dao.update(vo)){
+		if(dao.update(vo)){ // CRUD 비즈니스 메서드의 인자로 VO객체를 사용하는 것은 Spring식!!
 			response.sendRedirect("controller.jsp?action=main");
 		}
 		throw new Exception("update 수행 중 오류 발생");
