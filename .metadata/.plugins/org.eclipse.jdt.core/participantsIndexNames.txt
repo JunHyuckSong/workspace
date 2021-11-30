@@ -7,6 +7,8 @@ C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\5683343
 \day03\src
 C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2097607600.index
 \webclass3_HW1\src
+C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1741917678.index
+\day12\src
 C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3108204308.index
 \day06\src
 C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2911333723.index
