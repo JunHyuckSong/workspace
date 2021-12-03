@@ -25,3 +25,12 @@ create table webtoon(
 
 select * from WEBTOON;
 
+create table testboard(
+	id int primary key,
+	username varchar(20),
+	title varchar(30),
+	content varchar(50)
+);
+
+insert into testboard values(1,'바이','아케인','줄거리내용');
+select * from testboard;
