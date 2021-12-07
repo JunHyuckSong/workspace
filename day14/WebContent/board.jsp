@@ -23,8 +23,7 @@
 </head>
 <body>
 	<c:if test="${data.id==null}">
-		<!-- <h1>출력할 데이터가 없습니다</h1> -->
-		<c:redirect url="controller.jsp?action=main"/>
+		<h1>출력할 데이터가 없습니다</h1>
 	</c:if>
 	<c:if test="${data.id!=null}">	
 		<form action="controller.jsp" method="post" name="formA">	

@@ -20,8 +20,13 @@
 		pageContext.forward("main.jsp");
 	}else if(action.equals("board")){
 		BoardVO data = dao.selectOne(vo);
-		request.setAttribute("data", data);
-		pageContext.forward("board.jsp");
+		//System.out.println("로깅 : "+data);
+		/*if(data==null){
+			response.sendRedirect("controller.jsp?action=main");
+		}else{*/
+			request.setAttribute("data", data);
+			pageContext.forward("board.jsp");			
+		/*}*/
 	}else if(action.equals("insert")){
 		//System.out.print(vo);
 		if(dao.insert(vo)){

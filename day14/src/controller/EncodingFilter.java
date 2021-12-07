@@ -33,6 +33,7 @@ public class EncodingFilter implements Filter {
 
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
+	 * ------------------------------------요청시마다 필터가 실행할 메서드
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		request.setCharacterEncoding(encoding);
@@ -41,6 +42,7 @@ public class EncodingFilter implements Filter {
 
 	/**
 	 * @see Filter#init(FilterConfig)
+	 * ------------------------------------필터가 생성될 때 초기화 시 사용
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
