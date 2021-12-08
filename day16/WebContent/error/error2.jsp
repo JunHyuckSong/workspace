@@ -1,4 +1,3 @@
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,12 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<h1>현재 시간은 <%=new Date() %></h1>
-
-<%
-	System.out.println(out); // 내장객체로 out이 저장됨.
-%>
-
+	<h1>해당요청에 해당하는 페이지가 없습니다</h1>
+	<h3>URL을 확인해보세요</h3>
 </body>
 </html>
