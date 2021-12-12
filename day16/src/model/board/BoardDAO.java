@@ -16,17 +16,18 @@ public class BoardDAO { // BoardDAO에서 Borad와 Reply를 동시에 다룬다.
 	
 	String sql_selectAll = "select * from snsboard order by bid desc";//limit 0,?"; "더보기":pagination
 	String sql_selectOne = ""; // 현재 프로젝트에서는 상세보기를 지원하지 구현하지 않아도 된다.
-	String sql_insert = "insert into snsboard values((select nvl(max(bid),0) from snsboard)+1,?,?,0)";//로그인에 성공한 경우에만 C 진행
+	String sql_insertB = "insert into snsboard(bid,mid,msg) values((select nvl(max(bid),0) from snsboard)+1,?,?)";//로그인에 성공한 경우에만 C 진행
 	String sql_update = "update snsboard set favcnt=favcnt+1 where bid=?";//좋아요를 +1 시키는 작업
-	String sql_delete = "delete from snsboard where bid=? and mid=?";//해당 게시글의 작성자만이 삭제가능!!
+	String sql_deleteB = "delete from snsboard where bid=?";//해당 게시글의 작성자만이 삭제가능!!
 	
 	String sql_insertR = "insert into reply values((select nvl(max(bid),0) from reply)+1,?,?,?)";
-	String sql_deleteR = "delete from reply where rid=? and mid=?";//해당 댓글의 작성자만 삭제
+	String sql_deleteR = "delete from reply where rid=?";//해당 댓글의 작성자만 삭제
 	
 	
 	// 쌍으로 다니는 정보가 많다 ex)영화+평점 / 상품+후기 / 쇼핑몰+베송회사 etc
 	public ArrayList<BoardSet> selectAll(int mcnt) { // int mcnt는 한 페이지에 몇 개의 데이터를 보여주게 할지 정보를 받아옴
 		ArrayList<BoardSet> datas = new ArrayList<>();
+		// 반환 타입이 ArrayList<BoardSet>이므로 반환객체 하나를 우선 선언해줘야 한다!!
 		conn = JDBCUtil.connect();
 		try {
 			pstmt = conn.prepareStatement(sql_selectAll);
@@ -34,9 +35,9 @@ public class BoardDAO { // BoardDAO에서 Borad와 Reply를 동시에 다룬다.
 			System.out.println("mcnt : " + mcnt);
 			rs=pstmt.executeQuery();
 			while(rs.next()) { // 게시글을 얻는 과정 
-				BoardSet bs = new BoardSet();
+				BoardSet bs = new BoardSet(); // BoardSet = 1 X BoardVO + ArrayList<ReplyVO>
 				BoardVO b = new BoardVO();
-				ArrayList<ReplyVO> rdatas = new ArrayList<>();
+				ArrayList<ReplyVO> rdatas = new ArrayList<>(); //  ArrayList<BoardSet>에 넣어줄 댓글 컬랙션 선언
 				
 				b.setBid(rs.getInt("bid"));
 				b.setFavcnt(rs.getInt("favcnt"));
@@ -59,8 +60,10 @@ public class BoardDAO { // BoardDAO에서 Borad와 Reply를 동시에 다룬다.
 				}
 				System.out.println(b+"에 댓글의 개수: "+cnt+"개");//rdatas.size()도 가능
 				b.setRcnt(cnt); // 게시글의 대한 댓글의 개수
+				
 				bs.setBoard(b);
 				bs.setRdatas(rdatas);
+				
 				datas.add(bs);
 			}
 		} catch (SQLException e) {
@@ -74,10 +77,11 @@ public class BoardDAO { // BoardDAO에서 Borad와 Reply를 동시에 다룬다.
 	}
 	
 	
-	public boolean insert(BoardVO vo) {
+	public boolean insertB(BoardVO vo) {
 		conn = JDBCUtil.connect();
 		try {
-			pstmt = conn.prepareStatement(sql_insert);//insert into snsboard values((select nvl(max(bid),0) from snsboard)+1,?,?,0)
+			pstmt = conn.prepareStatement(sql_insertB);
+			//insert into snsboard(bid,mid,msg) values((select nvl(max(bid),0) from snsboard)+1,?,?)
 			pstmt.setString(1, vo.getMid());
 			pstmt.setString(2, vo.getMsg());
 			pstmt.executeUpdate();
@@ -110,12 +114,12 @@ public class BoardDAO { // BoardDAO에서 Borad와 Reply를 동시에 다룬다.
 	}
 	
 	
-	public boolean delete(BoardVO vo) {
+	public boolean deleteB(BoardVO vo) {
 		conn = JDBCUtil.connect();
 		try {
-			pstmt = conn.prepareStatement(sql_delete);//delete from snsboard where bid=? and mid=?
+			pstmt = conn.prepareStatement(sql_deleteB);
+			//delete from snsboard where bid=?
 			pstmt.setInt(1, vo.getBid());
-			pstmt.setString(2, vo.getMid());
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -128,14 +132,14 @@ public class BoardDAO { // BoardDAO에서 Borad와 Reply를 동시에 다룬다.
 		return true;
 	}
 	
-	public boolean insertR(ReplyVO vo) {
+	public boolean insertR(ReplyVO rvo) {
 		conn = JDBCUtil.connect();
 		try {
 			pstmt = conn.prepareStatement(sql_insertR);
 			//insert into reply values((select nvl(max(bid),0) from reply)+1,?,?,?)
-			pstmt.setInt(1, vo.getBid());
-			pstmt.setString(2, vo.getMid());
-			pstmt.setString(3, vo.getRmsg());
+			pstmt.setInt(1, rvo.getBid());
+			pstmt.setString(2, rvo.getMid());
+			pstmt.setString(3, rvo.getRmsg());
 			pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -149,16 +153,21 @@ public class BoardDAO { // BoardDAO에서 Borad와 Reply를 동시에 다룬다.
 		return true;
 	}
 	
-	public void deleteR(ReplyVO vo) {
+	public boolean deleteR(ReplyVO rvo) {
 		conn=JDBCUtil.connect();
 		try {
 			pstmt = conn.prepareStatement(sql_deleteR);
-			//delete from reply where rid=? and mid=?
-			pstmt.setInt(1, vo.getRid());
+			//delete from reply where rid=?
+			pstmt.setInt(1, rvo.getRid());
+			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
+		} finally {
+			JDBCUtil.disconnect(pstmt, conn);
 		}
+		return true;
 	}
 	
 	

@@ -22,11 +22,10 @@ create table reply(
 	constraint board_fk foreign key(bid) references snsboard(bid) on delete cascade
 );
 
-drop table memver;
 
-select * from snsboard
+select * from snsboard;
 
-
+select * from BOARD;
 
 
 

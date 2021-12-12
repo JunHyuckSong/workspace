@@ -49,6 +49,9 @@ public class MemberDAO {
 				if(rs.getString("mpw").equals(vo.getMpw())) {
 					System.out.println("비밀번호 일치");
 					return true;
+				}else {
+					System.out.println("비밀번호 불일치");
+					return false;
 				}
 				
 			}
