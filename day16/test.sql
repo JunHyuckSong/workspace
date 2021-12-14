@@ -25,7 +25,7 @@ create table reply(
 
 select * from snsboard;
 
-select * from BOARD;
+select * from member;
 
 
 
