@@ -7,8 +7,8 @@
 <title>새 글 작성 페이지</title>
 </head>
 <body>
-<form action="controller.jsp" method="post">
-	<input type="hidden" name="action" value="insert">
+<form action="insert.do" method="post">
+	
 	<table border="1">
 		<tr>
 			<td>글 제목</td>
@@ -28,6 +28,6 @@
 	</table>
 </form>
 <hr>
-<a href="controller.jsp?action=main">메인페이지로 돌아가기</a>
+<a href="main.do">메인페이지로 돌아가기</a>
 </body>
 </html>
