@@ -1,15 +1,19 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<form method="post" action="member_controlloer.jsp">
+
 	<c:choose>
 		<c:when test="${mid==null}">
-			<input type="hidden" name="action" value="login">
+			<form method="post" action="login.mem">	
 			ID : <input type="text" name="mid" required> PW : <input type="password" name="mpw" required> <input type="submit" value="LOGIN">
+			</form>
 		</c:when>
 		<c:otherwise>
-			<input type="hidden" name="action" value="logout">
+			<form method="post" action="logout.mem">	
 			${mid}님  환영합니다. <input type="submit" value="LOGOUT">
+			</form>
 		</c:otherwise>
 	</c:choose>
-</form>
+
+<!-- 1. form을 각각의 상황에 대해 사용할수있도록 분리 -->
+<!-- 2. action파라미터를 이용 -->

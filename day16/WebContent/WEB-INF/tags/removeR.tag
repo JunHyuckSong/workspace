@@ -5,5 +5,5 @@
 
 
 <c:if test="${rmid==mid}">
-	<a href="board_controller.jsp?action=deleteR&cnt=${cnt}&rid=${rid}">[삭제]</a>
+	<a href="deleteR.do?cnt=${cnt}&rid=${rid}">[삭제]</a>
 </c:if>

@@ -27,6 +27,8 @@ C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3641468
 \project\src
 C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3453716123.index
 \day01\src
+C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2911318992.index
+\day21\src
 C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1433989515.index
 \day04\src
 C:\web_3\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\323708001.index

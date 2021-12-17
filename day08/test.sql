@@ -6,4 +6,3 @@ create table board(
    content varchar(50) not null 
 );
 
-

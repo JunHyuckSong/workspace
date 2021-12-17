@@ -4,6 +4,6 @@
 <%@ attribute name="bid" %>
 
 <c:if test="${rmid==mid}">
-	<a href="board_controller.jsp?action=deleteB&bid=${bid}">[삭제]</a>
+	<a href="deleteB.do?bid=${bid}">[삭제]</a>
 </c:if>
-&nbsp;&nbsp;<a href="board_controller.jsp?action=fav&cnt=${cnt}&bid=${bid}">[좋아요]</a> 
+&nbsp;&nbsp;<a href="fav.do?cnt=${cnt}&bid=${bid}">[좋아요]</a> 

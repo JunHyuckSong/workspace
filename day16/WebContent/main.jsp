@@ -22,7 +22,7 @@
 	</ul>
 	
 	<hr>
-		<form action="board_controller.jsp?action=insertB" method="post">
+		<form action="insertB.do" method="post">
 			<input type="hidden" name="mid" value="${mid}">
 			<mytag:write type="board"/>
 		</form>
@@ -31,7 +31,7 @@
 	<c:forEach items="${datas}" var="v">
 		<c:set var="bvo" value="${v.board}"/>
 		${bvo.mid}님의 글:${bvo.msg}[좋아요 : ${bvo.favcnt} | 댓글 : ${bvo.rcnt} <mytag:removeB rmid="${bvo.mid}" bid="${bvo.bid}"/> <br>                         
-		<form action="board_controller.jsp?action=insertR&cnt=${cnt}" method="post">
+		<form action="insertR.do?cnt=${cnt}" method="post">
 			<input type="hidden" name="mid" value="${mid}">
 			<input type="hidden" name="bid" value="${bvo.bid}">
 			<mytag:write type="reply"/>
@@ -49,6 +49,6 @@
 	<!-- 이렇게 만들면 cnt파라미터를 보내주지 않았기때문에 null이므로 2로 초기화될 수 있다 -->
 	<!-- 참고할 것!! URL로 보내는 속석은 Parameter속성 -->
 	
-	<a href="controller.jsp?action=main&cnt=${cnt+2}">[더보기]</a>
+	<a href="main.do?cnt=${cnt+2}">[더보기]</a>
 </body>
 </html>
