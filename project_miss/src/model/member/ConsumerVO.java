@@ -1,12 +1,18 @@
 package model.member;
 
-public class ConsumerVO extends MemberVO{
-	
+public class ConsumerVO{
+	private String member_id;
 	private String nickname;
 	private String address;
 	private String phoneNumber;
 	private String email;
 	
+	public String getMember_id() {
+		return member_id;
+	}
+	public void setMember_id(String member_id) {
+		this.member_id = member_id;
+	}
 	public String getNickname() {
 		return nickname;
 	}
@@ -33,10 +39,8 @@ public class ConsumerVO extends MemberVO{
 	}
 	@Override
 	public String toString() {
-		return "ConsumerVO [member_id=" + getMember_id() + ", member_pw=" + getMember_pw() + ", nickname=" + nickname + ", auth=" + 
-				getAuth() + "+address=" + address + ", phoneNumber=" + phoneNumber + ", email=" + email + "]";
+		return "ConsumerVO [member_id=" + member_id + ", nickname=" + nickname + ", address=" + address
+				+ ", phoneNumber=" + phoneNumber + ", email=" + email + "]";
 	}
-	
-	
 	
 }

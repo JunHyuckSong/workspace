@@ -4,6 +4,7 @@ public class ProductVO {
 	private int product_id;
 	private String product_name;
 	private int price;
+	private String prodcut_regdate;
 	private String product_comment;
 	private String product_pictureurl;
 	private String product_category;
@@ -30,6 +31,12 @@ public class ProductVO {
 	}
 	public void setPrice(int price) {
 		this.price = price;
+	}
+	public String getProdcut_regdate() {
+		return prodcut_regdate;
+	}
+	public void setProdcut_regdate(String prodcut_regdate) {
+		this.prodcut_regdate = prodcut_regdate;
 	}
 	public String getProduct_comment() {
 		return product_comment;
@@ -74,14 +81,23 @@ public class ProductVO {
 		this.stock = stock;
 	}
 	
+	
+	public int getReviewcnt() {
+		return reviewcnt;
+	}
+	public void setReviewcnt(int reviewcnt) {
+		this.reviewcnt = reviewcnt;
+	}
 	@Override
 	public String toString() {
 		return "ProductVO [product_id=" + product_id + ", product_name=" + product_name + ", price=" + price
-				+ ", product_comment=" + product_comment + ", product_pictureurl=" + product_pictureurl
-				+ ", product_category=" + product_category + ", music_singer=" + music_singer + ", music_genre="
-				+ music_genre + ", favorite_count=" + favorite_count + ", stock=" + stock + ", reviewcnt=" + reviewcnt
-				+ "]";
+				+ ", prodcut_regdate=" + prodcut_regdate + ", product_comment=" + product_comment
+				+ ", product_pictureurl=" + product_pictureurl + ", product_category=" + product_category
+				+ ", music_singer=" + music_singer + ", music_genre=" + music_genre + ", favorite_count="
+				+ favorite_count + ", stock=" + stock + ", reviewcnt=" + reviewcnt + "]";
 	}
+	
+	
 	
 	
 }
