@@ -53,11 +53,11 @@
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="model.member.MemberVO"/>
     <fullyQualifiedTypeName name="model.board.BoardVO"/>
-    <fullyQualifiedTypeName name="model.product.ProductSet"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="model.member.ConsumerSet"/>
     <fullyQualifiedTypeName name="model.member.ConsumerVO"/>
     <fullyQualifiedTypeName name="model.product.ReviewVO"/>
+    <fullyQualifiedTypeName name="model.product.ProductSet"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="model.product.ProductVO"/>
     <fullyQualifiedTypeName name="model.common.JDBCUtil"/>
 </qualifiedTypeNameHistroy>
