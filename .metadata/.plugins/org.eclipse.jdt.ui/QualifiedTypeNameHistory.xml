@@ -38,12 +38,10 @@
     <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="model.board.BoardSet"/>
     <fullyQualifiedTypeName name="controller.LoginAction"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="org.eclipse.jdt.internal.compiler.ast.ForStatement"/>
     <fullyQualifiedTypeName name="model.member.MemberDAO"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="model.board.ReplyVO"/>
-    <fullyQualifiedTypeName name="controller.Action"/>
     <fullyQualifiedTypeName name="model.board.BoardDAO"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="controller.ActionForward"/>
@@ -53,11 +51,13 @@
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="model.board.BoardVO"/>
     <fullyQualifiedTypeName name="model.member.ConsumerSet"/>
-    <fullyQualifiedTypeName name="model.member.ConsumerVO"/>
     <fullyQualifiedTypeName name="model.product.ProductSet"/>
     <fullyQualifiedTypeName name="model.product.ReviewVO"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="model.product.ProductVO"/>
     <fullyQualifiedTypeName name="model.member.MemberVO"/>
+    <fullyQualifiedTypeName name="model.member.ConsumerVO"/>
     <fullyQualifiedTypeName name="model.common.JDBCUtil"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="controller.Action"/>
 </qualifiedTypeNameHistroy>
